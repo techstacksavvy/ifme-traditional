@@ -42,7 +42,7 @@ resource "aws_security_group" "web_ssh" {
   }
 
   tags = {
-    "Name" : "Web server001"
+    "Name" : "ifme-SG-kevin"
     "Terraform" : "true"
   }
   

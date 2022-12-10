@@ -14,7 +14,7 @@ resource "aws_instance" "web_server01" {
   subnet_id              = aws_subnet.subnet1.id
 
   tags = {
-    "Name" : "ifme-server"
+    "Name" : "ifme-server-kevin"
   }
 
   user_data = "${file("install_docker.sh")}"
@@ -33,7 +33,7 @@ resource "aws_vpc" "my-vpc" {
   enable_dns_hostnames = "true"
  
   tags = {
-    "Name" : "ifme-vpc"
+    "Name" : "ifme-vpc-kevin"
   }
 }
  
