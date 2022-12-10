@@ -5,10 +5,21 @@ provider "aws" {
   
 }
 
+variable "aws_access_key" {
+    type = string
+    sensitive = true
+}
+
+variable "aws_secret_key" {
+    type = string
+    sensitive = true
+
+}
+
  # Public EC2
 resource "aws_instance" "web_server01" {
   ami = "ami-08c40ec9ead489470"
-  instance_type = "t3.2xlarge"
+  instance_type = "t2.2xlarge"
   key_name = "ec2-key"
   vpc_security_group_ids = [aws_security_group.web_ssh.id]
   subnet_id              = aws_subnet.subnet1.id
