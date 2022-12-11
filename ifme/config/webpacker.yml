@@ -10,7 +10,7 @@ default: &default
   cache_manifest: false
 
   # Important to set this to false if not using the webpacker webpack setup
-  compile: false
+  compile: true
 
   extract_css: true
 
@@ -19,7 +19,7 @@ development:
 
   dev_server:
     host: localhost
-    port: 3000
+    port: 3035
     hmr: false
     https: false
 

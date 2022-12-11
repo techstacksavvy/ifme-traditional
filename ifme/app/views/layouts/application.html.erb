@@ -23,6 +23,7 @@
     -->
     <% if Rails.env.production? %>
       <%= inline_css 'webpack_bundle.css' %>
+      <%= stylesheet_pack_tag 'webpack_bundle', media: 'all' %>
     <% else %>
       <%= stylesheet_pack_tag 'webpack_bundle', media: 'all' %>
     <% end %>
