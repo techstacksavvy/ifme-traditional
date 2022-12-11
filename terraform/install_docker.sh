@@ -20,8 +20,6 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 sudo apt install docker-compose -y 
 
-docker stop $(docker ps -aq) #stop all running containers 
-
 sudo docker-compose build
 sudo docker-compose run app rake db:create db:migrate 
 sleep 3
