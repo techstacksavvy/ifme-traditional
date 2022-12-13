@@ -14,17 +14,14 @@
     <%= cl_client_hints_meta_tag %>
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="alternate" type="application/rss+xml" title="if-me.org blog" href="https://medium.com/feed/ifme" />
-    <base href="/">
+   
     <!-- Webpack Assets START -->
     <!--
       NOTE: Do not load multiple, separate webpack bundles, as it looks like
       only the last one will load correctly in production, as though there is
       a global registry and the last bundle overwrites the entire registry.
     -->
-    <% if Rails.env.production? %>
-      <%= inline_css 'webpack_bundle.css' %>
-    <% end %>
-    <%= javascript_pack_tag 'webpack_bundle', 'data-turbolinks-track': true, defer: true %>
+
     <!-- Webpack Assets END -->
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
