@@ -21,17 +21,14 @@
       only the last one will load correctly in production, as though there is
       a global registry and the last bundle overwrites the entire registry.
     -->
+    <% if Rails.env.production? %>
+      <%= inline_css 'webpack_bundle.css' %>
+    <% else %>
+      <%= stylesheet_pack_tag 'webpack_bundle', media: 'all' %>
+    <% end %>
+    <%= javascript_pack_tag 'webpack_bundle', defer: true %>
 
     <!-- Webpack Assets END -->
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <% if Rails.env.production? %>
-      <%= inline_css 'application.css' %>
-      <%= inline_js 'application.js' %>
-    <% else %>
-      <%= stylesheet_link_tag 'application', media: 'all'%>
-      <%= javascript_include_tag 'application' %>
-    <% end %>
 
     <% if user_signed_in? %>
       <!-- Pusher -->
