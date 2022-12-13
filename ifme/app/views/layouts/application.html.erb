@@ -33,12 +33,7 @@
     <% if Rails.env.production? %>
       <%= inline_css 'application.css' %>
       <%= inline_js 'application.js' %>
-    <% else %>
-      <% if false %>
-      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <% end %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <% end %>
 
     <% if user_signed_in? %>
       <!-- Pusher -->
