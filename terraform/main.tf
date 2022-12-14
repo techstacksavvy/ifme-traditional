@@ -1,20 +1,20 @@
 provider "aws" {
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
-  region = "us-east-1"
+  region = "us-east-2"
   
 }
 
  # Public EC2
 resource "aws_instance" "web_server01" {
-  ami = "ami-08c40ec9ead489470"
+  ami = "ami-097a2df4ac947655f"
   instance_type = "t2.medium"
-  key_name = "ec2-key"
+  key_name = "jenkins"
   vpc_security_group_ids = [aws_security_group.web_ssh.id]
   subnet_id              = aws_subnet.subnet1.id
 
   tags = {
-    "Name" : "ifme-server-kevin"
+    "Name" : "ifme-server-sasha"
   }
 
   user_data = "${file("install_docker.sh")}"
@@ -33,7 +33,7 @@ resource "aws_vpc" "my-vpc" {
   enable_dns_hostnames = "true"
  
   tags = {
-    "Name" : "ifme-vpc-kevin"
+    "Name" : "ifme-vpc-sasha"
   }
 }
  
